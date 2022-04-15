@@ -150,7 +150,6 @@ export class EmployeePageComponent implements OnInit {
   }
 
   delete(params: any) {
-    console.log(params)
     const index = this.tempData.findIndex(o => {
       return o.username === params;
     })

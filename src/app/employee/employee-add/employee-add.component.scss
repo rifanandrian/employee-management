@@ -44,7 +44,7 @@
     }
 
     .input {
-      width: 100% !important;
+      width: 100%;
       margin-left: 1rem;
     }
 
@@ -95,13 +95,6 @@
   button:disabled {
     background-color: #D8D8D8;
     border-color: #D8D8D8;
-  }
-
-  .select2 {
-    border: 1px solid #EAEAEA;
-    box-sizing: border-box;
-    border-radius: 6px;
-    padding: 11px 15px;
   }
 
   .btn-secondary {

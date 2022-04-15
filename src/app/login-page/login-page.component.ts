@@ -40,7 +40,6 @@ export class LoginPageComponent implements OnInit {
   ngOnInit() { }
 
   doLogin() {
-    console.log(this.loginForm.controls)
     this.formSubmitted = true;
     if (this.loginForm.invalid) {
       this.isInvalid = true

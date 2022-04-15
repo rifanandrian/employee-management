@@ -42,7 +42,6 @@ export class EmployeeAddComponent implements OnInit, AfterContentChecked {
 
     if (!!sessionStorage.getItem('dataUser')) {
       this.dataToEdit = JSON.parse(sessionStorage.getItem('dataUser') || '{}');
-      console.log(this.dataToEdit);
     }
 
     this.employeeForm = new FormGroup({
