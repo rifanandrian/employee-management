@@ -21,7 +21,7 @@
     margin-bottom: .625rem;
 
     .text {
-      width: 15%;
+      width: 13%;
 
       &--invalid {
         color: red;
@@ -31,7 +31,7 @@
     }
 
     .text-name {
-      width: 37%;
+      width: 31%;
 
       &--invalid {
         color: red;
@@ -44,7 +44,7 @@
     }
 
     .input {
-      width: 100%;
+      width: 100% !important;
       margin-left: 1rem;
     }
 
