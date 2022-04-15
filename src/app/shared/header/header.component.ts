@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
   moveTo(params: string) {
     if (params === 'home') {
       this.router.navigateByUrl('');
-    } else if (params === 'logout') {
+    } else if (params === 'login') {
       sessionStorage.clear();
       this.router.navigateByUrl('login');
     }
