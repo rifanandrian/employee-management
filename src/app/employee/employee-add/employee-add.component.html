@@ -1,0 +1,103 @@
+<div class="div-container py-content">
+  <div class="py-4 d-flex justify-content-between align-items-center">
+    <div class="title">{{!!dataToEdit ? 'Edit' : 'Add'}} Employee</div>
+    <div class="holder-add-employee">
+    </div>
+  </div>
+
+  <form class="holder-input-filter" [formGroup]="employeeForm">
+    <div class="field-input d-flex align-items-center">
+      <label for="username" class="text" [class]="this.employeeForm.controls['username'].status === 'INVALID' && this.employeeForm.controls['username'].touched ? ' text--invalid' : ' '">Username</label>
+      <input class="input"
+        [class]="this.employeeForm.controls['username'].status === 'INVALID' && this.employeeForm.controls['username'].touched ? ' text--invalid' : ' '"
+        id="username" autocomplete="new-password" formControlName="username" required>
+    </div>
+    <div class="d-flex justify-content-between">
+      <div class="field-input d-flex align-items-center w-100">
+        <label class="text-name" for="firstName" [class]="this.employeeForm.controls['firstName'].status === 'INVALID' && this.employeeForm.controls['firstName'].touched ? ' text-name--invalid' : ' '">Nama Depan</label>
+        <input class="input" [class]="this.employeeForm.controls['firstName'].status === 'INVALID' && this.employeeForm.controls['firstName'].touched ? ' text-name--invalid' : ' '"
+          autocomplete="new-password" formControlName="firstName" required>
+      </div>
+      <div class="field-input d-flex align-items-center w-100">
+        <label class="text-name ml-2" for="lastName" [class]="this.employeeForm.controls['lastName'].status === 'INVALID' && this.employeeForm.controls['lastName'].touched ? ' text-name--invalid' : ' '">Nama Belakang</label>
+        <input class="input" [class]="this.employeeForm.controls['lastName'].status === 'INVALID' && this.employeeForm.controls['lastName'].touched ? ' text-name--invalid' : ' '"
+          autocomplete="new-password" formControlName="lastName" required>
+      </div>
+    </div>
+    <div class="field-input d-flex align-items-center">
+      <label class="text" for="email" [class]="this.employeeForm.controls['email'].status === 'INVALID' && this.employeeForm.controls['email'].touched ? ' text--invalid' : ' '">Email</label>
+      <input class="input" [class]="this.employeeForm.controls['email'].status === 'INVALID' && this.employeeForm.controls['email'].touched ? ' text--invalid' : ' '"
+        autocomplete="new-password" formControlName="email" required>
+    </div>
+    <div class="field-input d-flex align-items-center">
+      <label class="text" for="" [class]="this.employeeForm.controls['birthDate'].status === 'INVALID' && this.employeeForm.controls['birthDate'].touched ? ' text--invalid' : ' '">Tanggal Lahir</label>
+      <div class="input-group date-picker">
+        <input class="form-control" name="birthDate" placeholder="Select a date"
+               [class]="this.employeeForm.controls['birthDate'].status === 'INVALID' && this.employeeForm.controls['birthDate'].touched ? ' text--invalid' : ' '"
+               angular-mydatepicker #dp="angular-mydatepicker" 
+               [options]="myDpOptions" 
+               (click)="dp.toggleCalendar()" autocomplete="new-password" formControlName="birthDate" required/>
+      
+        <div class="input-group-append">
+          <button type="button" class="btn btn-secondary" *ngIf="employeeForm.value['birthDate'] !== ''" (click)="dp.clearDate(); clearDate('birthDate')">
+            <fa-icon [icon]="faClose"></fa-icon>
+          </button>
+        </div>
+      
+        <div class="input-group-append">
+          <button type="button" class="btn btn-secondary" (click)="dp.toggleCalendar()">
+            <fa-icon [icon]="faCalendar"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="field-input d-flex align-items-center">
+      <label class="text" for="basicSalary" [class]="this.employeeForm.controls['basicSalary'].status === 'INVALID' && this.employeeForm.controls['basicSalary'].touched ? ' text--invalid' : ' '">Gaji</label>
+      <input class="input" [class]="this.employeeForm.controls['basicSalary'].status === 'INVALID' && this.employeeForm.controls['basicSalary'].touched ? ' text--invalid' : ' '"
+        type="number" autocomplete="new-password" formControlName="basicSalary" required>
+    </div>
+    <div class="field-input d-flex align-items-center">
+      <label class="text" for="status" [class]="this.employeeForm.controls['status'].status === 'INVALID' && this.employeeForm.controls['status'].touched ? ' text--invalid' : ' '">Status</label>
+      <input class="input" [class]="this.employeeForm.controls['status'].status === 'INVALID' && this.employeeForm.controls['status'].touched ? ' text--invalid' : ' '"
+        type="text" autocomplete="new-password" formControlName="status" required>
+    </div>
+    <div class="field-input d-flex align-items-center">
+      <label class="text" for="group" [class]="this.employeeForm.controls['group'].status === 'INVALID' && this.employeeForm.controls['group'].touched ? ' text--invalid' : ' '">Group</label>
+      <select class="select2 input" formControlName="group" [class]="this.employeeForm.controls['group'].status === 'INVALID' && this.employeeForm.controls['group'].touched ? ' text--invalid' : ' '">
+        <option *ngFor="let x of groups;" value="x" [selected]="x === employeeForm.value['group']">{{x}}</option>
+      </select>
+    </div>
+    <div class="field-input d-flex align-items-center">
+      <label class="text" for="description" [class]="this.employeeForm.controls['description'].status === 'INVALID' && this.employeeForm.controls['description'].touched ? ' text--invalid' : ' '">Deskripsi</label>
+      <div class="input-group date-picker">
+        <input class="form-control" name="description" placeholder="Select a date"
+               [class]="this.employeeForm.controls['description'].status === 'INVALID' && this.employeeForm.controls['description'].touched ? ' text--invalid' : ' '"
+               angular-mydatepicker #dp1="angular-mydatepicker" 
+               [options]="myDpOptions" 
+               (click)="dp1.toggleCalendar()" autocomplete="new-password" formControlName="description" required/>
+      
+        <div class="input-group-append">
+          <button type="button" class="btn btn-secondary" *ngIf="employeeForm.value['description'] !== ''" (click)="dp1.clearDate(); clearDate('description')">
+            <fa-icon [icon]="faClose"></fa-icon>
+          </button>
+        </div>
+      
+        <div class="input-group-append">
+          <button type="button" class="btn btn-secondary" (click)="dp1.toggleCalendar()">
+            <fa-icon [icon]="faCalendar"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="d-flex justify-content-end">
+      <button class="cancel" (click)="moveTo('cancel')">
+        Cancel
+      </button>
+      <button class="save" (click)="saveData()" [disabled]="empty && employeeForm.invalid ">
+        Save
+      </button>
+    </div>
+  </form>
+
+</div>

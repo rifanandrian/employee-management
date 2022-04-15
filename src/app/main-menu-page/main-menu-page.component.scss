@@ -1,0 +1,33 @@
+
+@import "/src/styles.scss";
+
+.div-container {
+  height: calc(100vh - 6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1DDBF;
+
+  button {
+    width: 17.5rem;
+    height: 18.75rem;
+    background-color: $white-color;
+    border-color: $white-color;
+    box-shadow: $box-shadow;
+
+    padding: 1rem;
+
+    img {
+      width: 10.5rem;
+    }
+
+    .title {
+      font-size: 1rem;
+      margin-bottom: .625rem;
+    }
+
+    .desc {
+      font-size: .625rem;
+    }
+  }
+}

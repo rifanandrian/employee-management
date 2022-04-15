@@ -1,0 +1,54 @@
+<div class="div-container py-content">
+  <div class="py-4 d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-start align-items-center">
+      <div class="back pointer" (click)="moveTo('menu')">
+        <fa-icon [icon]="faChevronLeft"></fa-icon>
+      </div>
+      <div class="mx-4 title">List Employee</div>
+    </div>
+    <div class="holder-add-employee">
+      <input class="filter my-2" (keyup)="searchUsername($event)" placeholder="Search By Username" [value]="searchValue">
+      <button class="add" (click)="moveTo('add')">Add Employee</button>
+    </div>
+  </div>
+
+  <div class="custom-table">
+    <div class="head-table d-flex">
+      <div class="width-a pointer" (click)="onSort('username')">Username</div>
+      <div class="width-b pointer" (click)="onSort('firstname')">FirstName</div>
+      <div class="width-c pointer" (click)="onSort('group')">Group</div>
+      <div class="width-d pointer" (click)="onSort('email')">Email</div>
+      <div class="width-e pointer">Action</div>
+    </div>
+
+    <div class="body-table ">
+      <div *ngFor="let listdata of tempData | paginate: { itemsPerPage: limit, currentPage: currPage }" class="d-flex content-table" (click)="action(listdata, 'detail')">
+        <div class="width-a">{{listdata['username']}}</div>
+        <div class="width-b">{{listdata['firstname']}}</div>
+        <div class="width-c">{{listdata['group']}}</div>
+        <div class="width-d">{{listdata['email']}}</div>
+        <div class="width-e d-flex justify-content-start">
+          <div class="edit">
+            <button (click)="moveTo('edit'); action(listdata, 'edit')">Edit</button>
+          </div>
+          <div class="mx-2 delete">
+            <button (click)="delete(listdata['username'])">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-2 d-flex justify-content-between align-items-center">
+    <select (change)="onTableSizeChange($event)"class="form-select">
+      <option *ngFor="let size of tableSizes" [value]="size" [selected]="size === limit">
+        {{ size }}
+      </option>
+    </select>
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="currPage = $event">
+    </pagination-controls>
+  </div>
+</div>

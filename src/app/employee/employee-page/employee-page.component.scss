@@ -1,0 +1,115 @@
+@import "../../../styles.scss";
+
+.div-container {
+  background-color: #F1DDBF;
+  height: calc(100vh - 6rem);
+  overflow: overlay;
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .holder-add-employee {
+    button {
+      height: 3rem;
+      font-size: 1rem;
+      color: $white-color;
+    }
+
+    input {
+      border-color: $white-color;
+    }
+
+    .add {
+      background-color: $green-color;
+      border-color: $green-color;
+    }
+
+    .filter {
+      margin: 0 auto;
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+.holder-input-filter {
+  padding: 1rem;
+  background-color: $white-color;
+  border-radius: .625rem;
+
+  .field-input {
+    margin-bottom: .625rem;
+    input {
+      margin-left: 1rem;
+    }
+  }
+
+  button {
+    color: $white-color;
+    background-color: $blue-color;
+    position: relative;
+    top: -1.5rem
+  }
+}
+
+.custom-table {
+  width: 100%;
+  height: calc(100% - 19.8rem);
+  background-color: $white-color;
+  box-shadow: $box-shadow;
+  border-radius: .625rem;
+  padding: 1rem;
+
+  .head-table {
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid $blue-color;
+  }
+
+  .body-table {
+    height: calc(100% - 2rem);
+    overflow: overlay;
+  }
+
+  .content-table {
+    margin: .625rem auto;
+    cursor: pointer;
+  }
+
+  .width-a, .width-b, .width-c, .width-e {
+    width: 18%;
+    word-break: break-all;
+  } 
+  .width-d {
+    width: 30%;
+    word-break: break-all;
+  }
+
+  .edit {
+    button {
+      height: 2rem;
+      color: $white-color;
+      background-color: $orange-color;
+      border-color: $orange-color;
+    }
+  }
+
+  .delete {
+    button {
+      height: 2rem;
+      color: $white-color;
+      background-color: $red-color;
+      border-color: $red-color;
+    }
+  }
+}
+
+.form-select {
+  width: 6%;
+  padding-right: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}

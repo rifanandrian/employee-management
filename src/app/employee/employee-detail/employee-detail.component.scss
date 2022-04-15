@@ -1,0 +1,84 @@
+@import "../../../styles.scss";
+
+.div-container {
+  background-color: #F1DDBF;
+  height: calc(100vh - 6rem);
+  overflow: overlay;
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+.holder-input-filter {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: $white-color;
+  border-radius: .625rem;
+  box-shadow: $box-shadow;
+
+  .field-input {
+    margin-bottom: .625rem;
+
+    .text {
+      width: 15%;
+    }
+
+    .text-name {
+      width: 37%;
+    }
+
+    .ml-2 {
+      margin-left: 1rem;
+    }
+
+    .field-text {
+      width: 100%;
+      margin-left: 1rem;
+      padding-top: .625rem;
+      padding-left: .625rem;
+      border-radius: 6px;
+      border: 1px solid #EAEAEA;
+      height: 3rem;
+    }
+
+    .date-picker {
+      margin-left: 1rem;
+    }
+
+    .borer-red {
+      border-color: red;
+    }
+  }
+
+  button {
+    width: 5rem;
+    height: 3rem;
+    color: $white-color;
+  }
+
+  button:disabled {
+    background-color: #D8D8D8;
+    border-color: #D8D8D8;
+  }
+
+  .cancel {
+    background-color: $blue-color;
+    border-color: $blue-color;
+  }
+
+  .save {
+    margin-left: 1rem;
+    background-color: $green-color;
+    border-color: $green-color;
+  }
+}
+
+.form-select {
+  width: 6%;
+  padding-right: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}

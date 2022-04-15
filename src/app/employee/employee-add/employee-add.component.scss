@@ -1,0 +1,130 @@
+@import "../../../styles.scss";
+
+.div-container {
+  background-color: #F1DDBF;
+  height: calc(100vh - 6rem);
+  overflow: overlay;
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+.holder-input-filter {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: $white-color;
+  border-radius: .625rem;
+  box-shadow: $box-shadow;
+
+  .field-input {
+    margin-bottom: .625rem;
+
+    .text {
+      width: 15%;
+
+      &--invalid {
+        color: red;
+      border-color: red;
+
+      }
+    }
+
+    .text-name {
+      width: 37%;
+
+      &--invalid {
+        color: red;
+        border-color: red;
+      }
+    }
+
+    .ml-2 {
+      margin-left: 1rem;
+    }
+
+    .input {
+      width: 100%;
+      margin-left: 1rem;
+    }
+
+    .date-picker {
+      margin-left: 1rem;
+    }
+  }
+
+  .autocomplete-panel {
+    position: relative;
+    height: 0;
+    width: 0;
+    right: -10rem;
+    top: -1rem;
+    z-index: 1;
+  
+    .autocomplete-box {
+      width: 40.5rem;
+      border-radius: 0.625rem;
+      background-color: white;
+      box-sizing: border-box;
+      box-shadow: 0px 6px 12px rgb(0 0 0 / 15%);
+      height: 10rem;
+      overflow: overlay;
+  
+      ul {
+        margin-left: -1rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  
+    .hidden {
+      visibility: hidden;
+    }
+  }
+
+  button {
+    width: 5rem;
+    height: 3rem;
+    color: $white-color;
+  }
+
+  button:disabled {
+    background-color: #D8D8D8;
+    border-color: #D8D8D8;
+  }
+
+  .select2 {
+    border: 1px solid #EAEAEA;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 11px 15px;
+  }
+
+  .btn-secondary {
+    background-color: $blue-color;
+  }
+
+  .cancel {
+    background-color: $blue-color;
+    border-color: $blue-color;
+  }
+
+  .save {
+    margin-left: 1rem;
+    background-color: $green-color;
+    border-color: $green-color;
+  }
+}
+
+.form-select {
+  width: 6%;
+  padding-right: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}

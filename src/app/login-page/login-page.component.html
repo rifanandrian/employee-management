@@ -1,0 +1,21 @@
+<div class="div-container">
+  <div class="body py-content d-flex justify-content-between">
+    <img class="content-logo" src="assets/4 SCENE.svg" alt="" srcset="">
+    <form class="login-form" [formGroup]="loginForm">
+      <div class="form-text-login" [class]="isInvalid ? ' form-text-login--invalid' : ''">Login</div>
+      <div class="form-alert-container" *ngIf="isInvalid">
+        <div class="text-section">{{errorText}}</div>
+        <a (click)="isInvalid = !isInvalid">OK</a>
+      </div>
+      <div class="div-input">
+        <div class="form-text-username" [class]="this.loginForm.controls['username'].status === 'INVALID' && this.loginForm.controls['username'].touched ? ' form-text-username--invalid' : ' '">Username</div>
+        <input class="form-input-username" [class]="this.loginForm.controls['username'].status === 'INVALID' && this.loginForm.controls['username'].touched ? ' form-input-username--invalid' : ' '" type="text" autocomplete="new-password" formControlName="username" required/>
+      </div>
+      <div class="div-input">
+        <div class="form-text-password" [class]="this.loginForm.controls['password'].status === 'INVALID' && this.loginForm.controls['password'].touched ? ' form-text-password--invalid' : ' '">Password</div>
+        <input class="form-input-password" [class]="this.loginForm.controls['password'].status === 'INVALID' && this.loginForm.controls['password'].touched ? ' form-input-password--invalid' : ' '" type="password" autocomplete="new-password" formControlName="password" required/>
+      </div>
+      <button class="form-button-login btn-login" type="button" (click)="doLogin()" [disabled]="empty">Login</button>
+    </form>
+  </div>
+</div>
